@@ -10,6 +10,7 @@ import SwiftUI
 struct NewHabitView: View {
     
     @State var selectedColor = Color(hex: "025315")
+    @State var selectedImage = Constants.images[0]
     
     @State private var selectedFrequency = "Daily"
     @State var habitName = ""
@@ -20,15 +21,15 @@ struct NewHabitView: View {
     
     init() {
         UISegmentedControl.appearance().selectedSegmentTintColor = UIColor(Constants.pickerGreen)
-        UISegmentedControl.appearance().setTitleTextAttributes([.foregroundColor: UIColor.black], for: .selected)
-        UISegmentedControl.appearance().setTitleTextAttributes([.foregroundColor: UIColor.white], for: .normal)
+        UISegmentedControl.appearance().setTitleTextAttributes([.foregroundColor: UIColor(Constants.AppBlack)], for: .selected)
+        UISegmentedControl.appearance().setTitleTextAttributes([.foregroundColor: UIColor(Constants.AppWhite)], for: .normal)
     }
     
     var body: some View {
 //        NavigationView {
             VStack {
                 ScrollView {
-                    VStack(spacing: 16) {
+                    VStack(spacing: 20) {
                     
                         // Habit Name
                         TextField("Habit Name", text: $habitName)
@@ -57,7 +58,7 @@ struct NewHabitView: View {
                         // Color Selection
                         VStack(alignment: .leading, spacing: 8) {
                             Text("Color")
-                            LazyHGrid(rows: [GridItem(.flexible()), GridItem(.flexible())]) {
+                            LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible()), GridItem(.flexible()), GridItem(.flexible()), GridItem(.flexible()), GridItem(.flexible()), GridItem(.flexible()), GridItem(.flexible())]) {
                                 ForEach(Constants.color, id: \.self) { color in
                                     ZStack {
                                         Button {
@@ -69,6 +70,41 @@ struct NewHabitView: View {
                                         }
                                         if selectedColor == color {
                                             Image(systemName: "checkmark")
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        
+                        VStack(alignment: .leading, spacing: 8) {
+                            Text("Icon")
+                            LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible()), GridItem(.flexible()), GridItem(.flexible()), GridItem(.flexible()), GridItem(.flexible()), GridItem(.flexible()), GridItem(.flexible())]) {
+                                ForEach(Constants.images) { image in
+                                    Button {
+                                        selectedImage = image
+                                    } label: {
+                                        ZStack {
+                                            if selectedImage == image {
+                                                Rectangle()
+                                                    .fill(Constants.grayBackground)
+                                                    .frame(width: 35, height: 35)
+                                                    .cornerRadius(4)
+                                                    .overlay(
+                                                        
+                                                        RoundedRectangle(cornerRadius: 4)
+                                                            .stroke(.green, lineWidth: 1)
+                                                        
+                                                    )
+                                            } else {
+                                                Rectangle()
+                                                    .fill(Constants.grayBackground)
+                                                    .frame(width: 35, height: 35)
+                                                    .cornerRadius(4)
+                                            }
+                                            
+                                            image.image
+                                                .resizable()
+                                                .frame(width: 30, height: 30)
                                         }
                                     }
                                 }
@@ -91,12 +127,12 @@ struct NewHabitView: View {
                                 } label: {
                                     ZStack {
                                         Rectangle()
-                                            .foregroundColor(Color(hex: "161b17"))
+                                            .foregroundColor(Constants.grayBackground)
                                             .frame(width: 24, height: 24)
                                             .cornerRadius(4)
                                             .cornerRadius(6, corners: [.topLeft, .bottomLeft])
                                         Image(systemName: "minus")
-                                            .foregroundColor(Color(hex: "81ba83"))
+                                            .foregroundColor(Constants.pickerGreen)
                                     }
                                 }
                                 
@@ -115,17 +151,18 @@ struct NewHabitView: View {
                                 } label: {
                                     ZStack {
                                         Rectangle()
-                                            .foregroundColor(Color(hex: "161b17"))
+                                            .foregroundColor(Constants.grayBackground)
                                             .frame(width: 24, height: 24)
                                             .cornerRadius(6, corners: [.topRight, .bottomRight])
                                         Image(systemName: "plus")
-                                            .foregroundColor(Constants.AppGreen)
+                                            .foregroundColor(Constants.pickerGreen)
                                     }
                                 }
                             }
                         }
                         
                     }
+                    .padding(.top)
                 }
                 .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity)
             }
@@ -140,10 +177,14 @@ struct NewHabitView: View {
                     .buttonStyle(.plain)
                     .disabled(true)
                 }
+                ToolbarItem(placement: .topBarLeading) {
+                    
+                }
             })
             .onAppear(perform: {
                 selectedDays = Constants.days
             })
+            .navigationBarBackButtonHidden()
             .navigationTitle("New Habit")
             .navigationBarTitleDisplayMode(.inline)
             .padding(.horizontal, 16)
@@ -217,7 +258,7 @@ struct DayTabView: View {
             }
         } label: {
             Text(day)
-                .foregroundStyle(.white)
+                .foregroundColor(Constants.AppWhite)
                 .font(.caption)
                 .frame(width: 50, height: 20)
                 .background(isSelected ? Constants.selectedTabColor : Constants.grayBackground)
@@ -243,12 +284,11 @@ struct MonthTabView: View {
                     .foregroundColor(isSelected ? Constants.selectedTabColor : .clear)
                 Text("\(date)")
                     .font(.caption)
-                    .foregroundStyle(.white)
+                    .foregroundColor(Constants.AppWhite)
             }
         }
     }
 }
-
 
 #Preview {
     NewHabitView()

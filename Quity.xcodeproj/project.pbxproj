@@ -16,6 +16,13 @@
 		185C35632C7E482B00D1EC6A /* NewHabitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185C35622C7E482B00D1EC6A /* NewHabitView.swift */; };
 		185C35AE2C864CE800D1EC6A /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185C35AD2C864CE800D1EC6A /* Constants.swift */; };
 		185C35B12C864D2600D1EC6A /* Extenstions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185C35B02C864D2600D1EC6A /* Extenstions.swift */; };
+		185C35B42C8C7C4A00D1EC6A /* DailyListTrackerItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185C35B32C8C7C4A00D1EC6A /* DailyListTrackerItem.swift */; };
+		185C35B72C8C7C8000D1EC6A /* ConfettiSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 185C35B62C8C7C8000D1EC6A /* ConfettiSwiftUI */; };
+		185C35B92C8C7C9500D1EC6A /* OverAllListTrackerItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185C35B82C8C7C9500D1EC6A /* OverAllListTrackerItem.swift */; };
+		185C35BB2C8C7CB300D1EC6A /* WeeklyListTrackerItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185C35BA2C8C7CB300D1EC6A /* WeeklyListTrackerItem.swift */; };
+		185C35BE2C8C7CF600D1EC6A /* ContributionChart in Frameworks */ = {isa = PBXBuildFile; productRef = 185C35BD2C8C7CF600D1EC6A /* ContributionChart */; };
+		185C35C02C8C7D7C00D1EC6A /* InfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185C35BF2C8C7D7C00D1EC6A /* InfoView.swift */; };
+		185C35C32C8C7EA800D1EC6A /* Fastis in Frameworks */ = {isa = PBXBuildFile; productRef = 185C35C22C8C7EA800D1EC6A /* Fastis */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +37,10 @@
 		185C35622C7E482B00D1EC6A /* NewHabitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewHabitView.swift; sourceTree = "<group>"; };
 		185C35AD2C864CE800D1EC6A /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		185C35B02C864D2600D1EC6A /* Extenstions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extenstions.swift; sourceTree = "<group>"; };
+		185C35B32C8C7C4A00D1EC6A /* DailyListTrackerItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyListTrackerItem.swift; sourceTree = "<group>"; };
+		185C35B82C8C7C9500D1EC6A /* OverAllListTrackerItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverAllListTrackerItem.swift; sourceTree = "<group>"; };
+		185C35BA2C8C7CB300D1EC6A /* WeeklyListTrackerItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeklyListTrackerItem.swift; sourceTree = "<group>"; };
+		185C35BF2C8C7D7C00D1EC6A /* InfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,6 +48,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				185C35B72C8C7C8000D1EC6A /* ConfettiSwiftUI in Frameworks */,
+				185C35C32C8C7EA800D1EC6A /* Fastis in Frameworks */,
+				185C35BE2C8C7CF600D1EC6A /* ContributionChart in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -85,9 +99,11 @@
 		185C355F2C7E47DA00D1EC6A /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				185C35B22C8C7C2100D1EC6A /* ListTrackerItems */,
 				185C35502C7E46FF00D1EC6A /* ContentView.swift */,
 				185C35602C7E47F500D1EC6A /* SettingsView.swift */,
 				185C35622C7E482B00D1EC6A /* NewHabitView.swift */,
+				185C35BF2C8C7D7C00D1EC6A /* InfoView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -108,6 +124,16 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		185C35B22C8C7C2100D1EC6A /* ListTrackerItems */ = {
+			isa = PBXGroup;
+			children = (
+				185C35B32C8C7C4A00D1EC6A /* DailyListTrackerItem.swift */,
+				185C35B82C8C7C9500D1EC6A /* OverAllListTrackerItem.swift */,
+				185C35BA2C8C7CB300D1EC6A /* WeeklyListTrackerItem.swift */,
+			);
+			path = ListTrackerItems;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -124,6 +150,11 @@
 			dependencies = (
 			);
 			name = Quity;
+			packageProductDependencies = (
+				185C35B62C8C7C8000D1EC6A /* ConfettiSwiftUI */,
+				185C35BD2C8C7CF600D1EC6A /* ContributionChart */,
+				185C35C22C8C7EA800D1EC6A /* Fastis */,
+			);
 			productName = Quity;
 			productReference = 185C354B2C7E46FF00D1EC6A /* Quity.app */;
 			productType = "com.apple.product-type.application";
@@ -152,6 +183,11 @@
 				Base,
 			);
 			mainGroup = 185C35422C7E46FF00D1EC6A;
+			packageReferences = (
+				185C35B52C8C7C8000D1EC6A /* XCRemoteSwiftPackageReference "ConfettiSwiftUI" */,
+				185C35BC2C8C7CF600D1EC6A /* XCRemoteSwiftPackageReference "SwiftUI-ContributionChart" */,
+				185C35C12C8C7EA800D1EC6A /* XCRemoteSwiftPackageReference "Fastis" */,
+			);
 			productRefGroup = 185C354C2C7E46FF00D1EC6A /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -179,12 +215,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				185C35512C7E46FF00D1EC6A /* ContentView.swift in Sources */,
+				185C35C02C8C7D7C00D1EC6A /* InfoView.swift in Sources */,
 				185C35612C7E47F500D1EC6A /* SettingsView.swift in Sources */,
 				185C35B12C864D2600D1EC6A /* Extenstions.swift in Sources */,
+				185C35B92C8C7C9500D1EC6A /* OverAllListTrackerItem.swift in Sources */,
 				185C35532C7E46FF00D1EC6A /* Item.swift in Sources */,
 				185C35632C7E482B00D1EC6A /* NewHabitView.swift in Sources */,
+				185C35BB2C8C7CB300D1EC6A /* WeeklyListTrackerItem.swift in Sources */,
 				185C354F2C7E46FF00D1EC6A /* QuityApp.swift in Sources */,
 				185C35AE2C864CE800D1EC6A /* Constants.swift in Sources */,
+				185C35B42C8C7C4A00D1EC6A /* DailyListTrackerItem.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -403,6 +443,51 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		185C35B52C8C7C8000D1EC6A /* XCRemoteSwiftPackageReference "ConfettiSwiftUI" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/simibac/ConfettiSwiftUI";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.1.0;
+			};
+		};
+		185C35BC2C8C7CF600D1EC6A /* XCRemoteSwiftPackageReference "SwiftUI-ContributionChart" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/VIkill33/SwiftUI-ContributionChart";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.3;
+			};
+		};
+		185C35C12C8C7EA800D1EC6A /* XCRemoteSwiftPackageReference "Fastis" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/simla-tech/Fastis";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.2.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		185C35B62C8C7C8000D1EC6A /* ConfettiSwiftUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 185C35B52C8C7C8000D1EC6A /* XCRemoteSwiftPackageReference "ConfettiSwiftUI" */;
+			productName = ConfettiSwiftUI;
+		};
+		185C35BD2C8C7CF600D1EC6A /* ContributionChart */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 185C35BC2C8C7CF600D1EC6A /* XCRemoteSwiftPackageReference "SwiftUI-ContributionChart" */;
+			productName = ContributionChart;
+		};
+		185C35C22C8C7EA800D1EC6A /* Fastis */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 185C35C12C8C7EA800D1EC6A /* XCRemoteSwiftPackageReference "Fastis" */;
+			productName = Fastis;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 185C35432C7E46FF00D1EC6A /* Project object */;
 }

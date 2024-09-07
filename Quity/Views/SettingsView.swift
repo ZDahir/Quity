@@ -9,26 +9,21 @@ import SwiftUI
 
 struct SettingsView: View {
     
-    
     @State private var selectedTheme = "System"
-    
-    
     @State private var selectedDay = "Saturday"
-    
     @State var sounds = false
-    
     @State var showCurrentStreak = false
     
     init() {
         UISegmentedControl.appearance().selectedSegmentTintColor = UIColor(Constants.pickerGreen)
-        UISegmentedControl.appearance().setTitleTextAttributes([.foregroundColor: UIColor.black], for: .selected)
-        UISegmentedControl.appearance().setTitleTextAttributes([.foregroundColor: UIColor.white], for: .normal)
+        UISegmentedControl.appearance().setTitleTextAttributes([.foregroundColor: UIColor(Constants.AppBlack)], for: .selected)
+        UISegmentedControl.appearance().setTitleTextAttributes([.foregroundColor: UIColor(Constants.AppWhite)], for: .normal)
     }
     
     var body: some View {
         VStack {
             ScrollView {
-                VStack(spacing: 16) {
+                VStack(spacing: 20) {
                     VStack(alignment: .leading, spacing: 4) {
                         Text("Theme")
                         Picker("Please choose a color", selection: $selectedTheme) {
@@ -87,7 +82,7 @@ struct SettingsOptions: View {
                     Rectangle()
                         .frame(width: 30, height: 30)
                         .cornerRadius(12)
-                        .foregroundColor(Color(uiColor: .darkGray))
+                        .foregroundColor(Constants.grayBackground)
                     image
                         .renderingMode(.template)
                         .resizable()
