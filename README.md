@@ -39,7 +39,7 @@
 
 ## Author Info
 
-- LinkedIn - [Your Name](https://linkedin.com/in/yourprofile)
-- Contact - [YourEmail@gmail.com](mailto:youremail@gmail.com)
+- LinkedIn - [Zaid Dahir](https://linkedin.com/in/zaiddahir)
+- Contact - [ZaidMDahir@gmail.com](mailto:zaidmdahir@gmail.com)
 
 [Back To The Top](#Quity)
